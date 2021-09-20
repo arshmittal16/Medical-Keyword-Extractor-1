@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <form> -->
+        <label>Enter Data Please</label>
+        <input type="text" name="text"  id="text">
+        <button id="submit" >Submit</button>
+    <!-- </form> -->
+</body>
+<script>
+    document.getElementById('submit').addEventListener('click',(e)=>{
+        e.preventDefault()
+        console.log(12)
+        let value=document.getElementById('text').value
+        fetch(`https://arsh-p1.herokuapp.com/gg/${value}`).then(data=> {
+                console.log(123)
+                data.json()
+            }).then(gg=>{
+            console.log(gg);
+        })
+    })
+</script>
+</html>
